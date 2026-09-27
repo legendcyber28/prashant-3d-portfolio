@@ -7,7 +7,7 @@ A React and Three.js portfolio with a cyclist riding a continuous loop. The visi
 
 ## Edit and build
 
-The editable source is in `src/`, with the Vite HTML entry in `source/index.html`. The `audio/` folder contains the licensed AI-generated voice segments as JavaScript data modules. The locally bundled Three.js runtime under `src/` follows the Three.js MIT license. The supplied illustration is stylized, not a scan or exact likeness of the owner.
+The editable source is in `src/`, with the Vite HTML entry in `source/index.html`. The `audio/` folder contains the licensed AI-generated voice segments as JavaScript data modules. The Three.js runtime is bundled by Vite from the npm dependency and follows the Three.js MIT license. The supplied illustration is stylized, not a scan or exact likeness of the owner.
 
 1. Install Node.js 20 or newer.
 2. Run `npm install`.
