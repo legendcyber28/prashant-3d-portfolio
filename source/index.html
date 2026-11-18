@@ -1,1 +1,40 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#e7f4eb"/><meta name="description" content="Prashant Katheriya's interactive 3D cycling portfolio"/><title>Prashant Katheriya | 3D Portfolio</title></head><body><div id="root"></div><script type="module" src="../src/main.tsx"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><meta name="theme-color" content="#e7f4eb"/><meta name="description" content="Prashant Katheriya's interactive 3D cycling portfolio"/><title>Prashant Katheriya | 3D Portfolio</title>
+<style id="pg-greet-style">
+#pg-greet{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(8,18,16,.62);opacity:0;pointer-events:none;transition:opacity .25s ease;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+#pg-greet.pg-show{opacity:1;pointer-events:auto}
+#pg-greet .pg-card{position:relative;width:min(92vw,420px);background:#0f2a26;border:1px solid #1f4a43;border-radius:18px;padding:18px 18px 16px;box-shadow:0 18px 60px rgba(0,0,0,.45);text-align:center;color:#e7f4eb}
+#pg-greet video{width:100%;border-radius:14px;display:block;background:#0d2b28}
+#pg-greet h2{margin:12px 0 4px;font-size:20px}
+#pg-greet p{margin:0 0 12px;font-size:14px;color:#b8d6cc}
+#pg-greet .pg-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#pg-greet button{border:0;border-radius:10px;padding:10px 16px;font-size:14px;cursor:pointer;background:#1f4a43;color:#e7f4eb}
+#pg-greet button.pg-primary{background:#2fbf8f;color:#06231b;font-weight:600}
+#pg-greet #pg-close{position:absolute;top:8px;right:10px;background:transparent;font-size:16px;padding:6px 8px;color:#b8d6cc}
+</style>
+</head><body><div id="root"></div><script type="module" src="../src/main.tsx"></script>
+<div id="pg-greet" role="dialog" aria-label="Video greeting from Prashant">
+  <div class="pg-card">
+    <button id="pg-close" aria-label="Close greeting">&#10005;</button>
+    <video id="pg-vid" src="./1-prashant-greeting-mascot.mp4" playsinline muted loop preload="auto"></video>
+    <h2>Hello! I'm Prashant</h2>
+    <p>Turn sound on for the full welcome, then come in.</p>
+    <div class="pg-row">
+      <button id="pg-sound">Play with sound</button>
+      <button id="pg-enter" class="pg-primary">Enter the portfolio</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var overlay=document.getElementById('pg-greet');
+  var vid=document.getElementById('pg-vid');
+  if(!overlay||!vid)return;
+  function show(){overlay.classList.add('pg-show');vid.muted=true;var p=vid.play();if(p&&p.catch)p.catch(function(){});}
+  function hide(){overlay.classList.remove('pg-show');vid.pause();}
+  document.getElementById('pg-close').addEventListener('click',hide);
+  document.getElementById('pg-enter').addEventListener('click',hide);
+  document.getElementById('pg-sound').addEventListener('click',function(){vid.muted=false;vid.currentTime=0;var p=vid.play();if(p&&p.catch)p.catch(function(){});});
+  if(document.readyState==='complete'||document.readyState==='interactive'){setTimeout(show,400);}else{window.addEventListener('DOMContentLoaded',function(){setTimeout(show,400);});}
+})();
+</script>
+</body></html>
