@@ -17,22 +17,24 @@
   <link rel="stylesheet" crossorigin href="./assets/assets/index-DemCRcjD.css?v=20260927-1723">
 <script src="https://page-views-api.ratneshc.com/script" data-site="legendcyber28.github.io" data-path="/prashant-3d-portfolio/" defer></script>
 <style id="pg-greet-style">
-#pg-greet{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(8,18,16,.62);opacity:0;pointer-events:none;transition:opacity .25s ease;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+#pg-greet{position:fixed;inset:0;z-index:9999;background:#0d2b28;opacity:0;pointer-events:none;transition:opacity .25s ease;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
 #pg-greet.pg-show{opacity:1;pointer-events:auto}
-#pg-greet .pg-card{position:relative;width:min(92vw,420px);background:#0f2a26;border:1px solid #1f4a43;border-radius:18px;padding:18px 18px 16px;box-shadow:0 18px 60px rgba(0,0,0,.45);text-align:center;color:#e7f4eb}
-#pg-greet video{width:100%;border-radius:14px;display:block;background:#0d2b28}
-#pg-greet h2{margin:12px 0 4px;font-size:20px}
-#pg-greet p{margin:0 0 12px;font-size:14px;color:#b8d6cc}
-#pg-greet .pg-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-#pg-greet button{border:0;border-radius:10px;padding:10px 16px;font-size:14px;cursor:pointer;background:#1f4a43;color:#e7f4eb}
+#pg-greet video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#0d2b28}
+#pg-greet .pg-scrim{position:absolute;left:0;right:0;bottom:0;height:38%;background:linear-gradient(transparent,rgba(4,14,12,.85));pointer-events:none}
+#pg-greet .pg-bottom{position:absolute;left:0;right:0;bottom:0;padding:0 20px calc(28px + env(safe-area-inset-bottom));text-align:center;color:#eef7f3}
+#pg-greet h2{margin:0 0 6px;font-size:24px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+#pg-greet p{margin:0 0 14px;font-size:15px;color:#d7eae2;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+#pg-greet .pg-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+#pg-greet button{border:0;border-radius:12px;padding:12px 20px;font-size:15px;cursor:pointer;background:rgba(20,50,44,.85);color:#e7f4eb}
 #pg-greet button.pg-primary{background:#2fbf8f;color:#06231b;font-weight:600}
-#pg-greet #pg-close{position:absolute;top:8px;right:10px;background:transparent;font-size:16px;padding:6px 8px;color:#b8d6cc}
+#pg-greet #pg-close{position:absolute;top:calc(10px + env(safe-area-inset-top));right:12px;z-index:2;background:rgba(8,20,17,.55);color:#fff;border-radius:999px;width:38px;height:38px;padding:0;font-size:16px}
 </style>
 </head><body><div id="root"></div>
 <div id="pg-greet" role="dialog" aria-label="Video greeting from Prashant">
-  <div class="pg-card">
-    <button id="pg-close" aria-label="Close greeting">&#10005;</button>
-    <video id="pg-vid" src="./1-prashant-greeting-mascot.mp4" playsinline muted loop preload="auto"></video>
+  <video id="pg-vid" src="./1-prashant-greeting-mascot.mp4" playsinline muted loop preload="auto"></video>
+  <div class="pg-scrim"></div>
+  <button id="pg-close" aria-label="Close greeting">&#10005;</button>
+  <div class="pg-bottom">
     <h2>Hello! I'm Prashant</h2>
     <p>Turn sound on for the full welcome, then come in.</p>
     <div class="pg-row">
